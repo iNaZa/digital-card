@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA Agent Card</title>
+    <link rel="stylesheet" href="fifa-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="fifa-container">
+        <div class="fifa-card">
+            <!-- En-tête FIFA -->
+            <div class="fifa-header">
+                <div class="fifa-logo">
+                    <span class="fifa-text">FIFA</span>
+                </div>
+                <div class="fifa-title">FOOTBALL AGENT LICENCE</div>
+            </div>
+
+            <!-- Photo et identité -->
+            <div class="agent-profile">
+                <div class="agent-photo-container">
+                    <img src="./asset/agent-photo.jpg" 
+                         alt="Agent Photo" 
+                         class="agent-photo"
+                         id="agentPhoto"
+                         onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face'">
+                </div>
+                <div class="agent-identity">
+                    <div class="agent-name" id="agentFirstName">John</div>
+                    <div class="agent-lastname" id="agentLastName">DOE</div>
+                    <div class="agent-position">FIFA Football Agent</div>
+                </div>
+            </div>
+
+            <!-- Informations de licence -->
+            <div class="licence-info">
+                <div class="info-item">
+                    <span class="info-label">License status:</span>
+                    <span class="info-value status-valid" id="licenseStatus">VALID</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">License number:</span>
+                    <span class="info-value" id="licenseNumber">FIFA-AG-2024-78901</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Connect ID:</span>
+                    <span class="info-value" id="connectId">FIFA-CONNECT-45678</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Authorized to represent minors:</span>
+                    <span class="info-value" id="minorsAuth">as of 15/01/2024</span>
+                </div>
+            </div>
+
+            <!-- QR Codes Section -->
+            <div class="qrcodes-section">
+                <!-- QR Code Contact -->
+                <div class="qrcode-container">
+                    <div class="qrcode-title">📱 CONTACT CARD</div>
+                    <div id="contactQR" class="qrcode"></div>
+                    <div class="qrcode-description">
+                        Scan to save contact
+                    </div>
+                </div>
+
+                <!-- QR Code Vérification FIFA -->
+                <div class="qrcode-container">
+                    <div class="qrcode-title">✅ LICENSE VERIFICATION</div>
+                    <div id="verificationQR" class="qrcode"></div>
+                    <div class="qrcode-description">
+                        Scan to verify on FIFA.com
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="fifa-footer">
+                <div class="fifa-badge">OFFICIAL FIFA AGENT</div>
+                <div class="verification-note">
+                    Verify license at <strong>fifa.com/agents</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Debug Info -->
+        <div class="debug-info" style="display: none; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 5px; margin-top: 10px; font-size: 12px;">
+            <div id="debugContent"></div>
+        </div>
+    </div>
+
+    <script src="fifa-script.js"></script>
+</body>
+</html>
